@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+   
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <servlet>
+        <!--Servlets que queremos llamar,como lo llamo yo y la clase a la que hace referencia-->
+        <servlet-name>Hola</servlet-name>
+        <servlet-class>es.albarregas.servlets.Saludo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Saludo</servlet-name>
+        <servlet-class>es.albarregas.servlets.Saludo</servlet-class>
+    </servlet>
+     <servlet-mapping>
+        <servlet-name>Saludo</servlet-name>
+        <url-pattern>/Saludo</url-pattern>
+    </servlet-mapping>
+    
+    <servlet-mapping>
+        <!--Servlets que queremos mapear donde el nombre hace referencia a Saludo-->
+        <servlet-name>Hola</servlet-name>
+        <url-pattern>/saludo</url-pattern>
+        <!--El nombre el que yo quiera-->
+    </servlet-mapping>
+    
+</web-app>
